@@ -1,0 +1,20 @@
+{% load cms_tags menu_tags sekizai_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>SEO-Check</title>
+    <link rel="stylesheet" href="{{STATIC_URL}}seo_check/bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="{{STATIC_URL}}seo_check/css/style.css">
+  </head>
+  <body>
+    <div id="page-title-yes"><i class="fa fa-check-circle"></i> Es ist ein Seitentitel gesetzt.</div>
+    <div id="page-title-no"><i class="fa fa-times-circle"></i> Es ist kein Seitentitel gesetzt.</div>
+    <div id="meta-description-yes"><i class="fa fa-check-circle"></i> Es ist eine Meta-Beschreibung gesetzt.</div>
+    <div id="meta-description-no"><i class="fa fa-times-circle"></i> Es ist keine Meta-Beschreibung gesetzt.</div>
+
+    <script src="{{STATIC_URL}}seo_check/bower_components/jquery/dist/jquery.js"></script>
+    <script src="{{STATIC_URL}}seo_check/js/check.js"></script>
+
+  </body>
+</html>
