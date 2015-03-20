@@ -1,4 +1,5 @@
 $(window).load(function(){
+  // SETUP
   $('#page-title-yes').hide();
   $('#page-title-no').hide();
   $('#meta-description-yes').hide();
@@ -11,9 +12,12 @@ $(window).load(function(){
     $('.cms_modal', parent.document).find('.cms_btn').text('Schließen');
   }, 100);
 
+  // TITLE
   var title = window.parent.document.title;
-  var metaDescription = window.parent.document.getElementsByTagName('meta').item(property='description');
-  if (metaDescription) {metaDescription = metaDescription.content;}
+
+  // DESCRIPTION
+  var metaDescription = $('meta[name="description"]', parent.document);
+  if (metaDescription) {metaDescription = metaDescription.attr("content");}
 
   if (title){
     $('#page-title-yes').show();
