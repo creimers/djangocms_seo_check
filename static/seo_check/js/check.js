@@ -93,4 +93,5 @@ $(window).load(function(){
   else{
     $('.text-no').show();
   }
+
 });
