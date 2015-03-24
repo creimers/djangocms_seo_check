@@ -1,17 +1,19 @@
 $(window).load(function(){
   // SETUP
-  $('.page-title-yes').hide();
+  //$('.page-title-yes').hide();
   $('#page-title-suggestion').hide();
   $('#page-title-good-length').hide();
-  $('#page-title-no').hide();
-  $('#meta-description-yes').hide();
-  $('#meta-description-no').hide();
+  //$('#page-title-no').hide();
+  //$('#meta-description-yes').hide();
+  //$('#meta-description-no').hide();
 
-  $('.h1-yes').hide();
-  $('.h1-no').hide();
+  $('.seo-item').hide();
 
-  $('.h2-yes').hide();
-  $('.h2-no').hide();
+  //$('.h1-yes').hide();
+  //$('.h1-no').hide();
+
+  //$('.h2-yes').hide();
+  //$('.h2-no').hide();
 
   var modalTitle = $('#cms_toolbar .cms_modal .cms_modal-title', window.parent.document);
 
@@ -72,5 +74,23 @@ $(window).load(function(){
   }
   else {
     $('.h2-yes').show();
+  }
+
+  // TEXT
+  var wordCount = 0;
+  var text = $('p:visible', parent.document);
+  if (text.length !== 0) {
+    $('.text-yes').show();
+    text.each(
+      function(){
+        var content = $(this).text();
+        var contentLength = content.split(' ').length;
+        wordCount += contentLength;
+      }
+    ) 
+    $('#word-count').text(wordCount);
+  }
+  else{
+    $('.text-no').show();
   }
 });
